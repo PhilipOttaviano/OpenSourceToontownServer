@@ -122,22 +122,22 @@ class TownBattleToonPanel(DirectFrame):
         return
 
     def determineWhichText(self, numTargets, targetIndex, localNum, index):
-        returnStr = ''
-        targetList = range(numTargets)
+        returnStr=''
+        targetList=range(numTargets)
         targetList.reverse()
         for i in targetList:
             if targetIndex == -1:
-                returnStr += 'X'
+                returnStr+='X'
             elif targetIndex == -2:
                 if i == index:
-                    returnStr += '-'
+                    returnStr+='-'
                 else:
-                    returnStr += 'X'
-            elif targetIndex >= 0 and targetIndex <= 3:
+                    returnStr+='X'
+            elif targetIndex >= 0 and targetIndex <= 7:
                 if i == targetIndex:
-                    returnStr += 'X'
+                    returnStr+='X'
                 else:
-                    returnStr += '-'
+                    returnStr+='-'
             else:
                 self.notify.error('Bad target index: %s' % targetIndex)
 

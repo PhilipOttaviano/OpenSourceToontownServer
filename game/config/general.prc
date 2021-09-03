@@ -23,6 +23,8 @@ default-model-extension .bam
 # Display settings
 depth-bits 24
 
+suits-always-join 1
+
 # GUI settings
 direct-wtext false
 on-screen-debug-font ImpressBT.ttf

@@ -1057,7 +1057,7 @@ class DistributedSuitPlannerAI(DistributedObjectAI.DistributedObjectAI, SuitPlan
 
     def __suitCanJoinBattle(self, zoneId):
         battle = self.battleMgr.getBattle(zoneId)
-        if len(battle.suits) >= 4:
+        if len(battle.suits) >= 8:
             return 0
         if battle:
             if simbase.config.GetBool('suits-always-join', 0):

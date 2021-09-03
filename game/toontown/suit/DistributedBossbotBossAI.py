@@ -79,6 +79,12 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         self.makeBattleOneBattles()
 
     def enterIntroduction(self):
+        """
+        enter the introduction barrier
+        Args:
+         - self
+        
+        """
         self.arenaSide = None
         self.makeBattleOneBattles()
         self.barrier = self.beginBarrier('Introduction', self.involvedToons, 45, self.doneIntroduction)
@@ -91,9 +97,27 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             self.battleOneBattlesMade = True
 
     def getHoodId(self):
+        """
+        return the hq id
+        Args:
+         - self
+        
+        Return:
+         - ToontownGlobals.LawbotHQ
+        
+        """
         return ToontownGlobals.LawbotHQ
 
     def generateSuits(self, battleNumber):
+        """
+        generates the suits for the given battle number
+        Args:
+         - self, battleNumber
+        
+        Return:
+         - retval
+        
+        """
         if battleNumber == 1:
             weakenedValue = ((1, 1),
              (2, 2),
@@ -149,6 +173,12 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         return battle
 
     def initializeBattles(self, battleNumber, bossCogPosHpr):
+        """
+        initialize all the battles on the current state
+        Args:
+         - self, battleNumber, bossCogPosHpr
+        
+        """
         self.resetBattles()
         if not self.involvedToons:
             self.notify.warning('initializeBattles: no toons!')
@@ -227,6 +257,12 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         self.foodBelts = []
 
     def createBanquetTables(self):
+        """
+        create the banquet tables for the battle difficulty
+        Args:
+         - self
+        
+        """
         if self.tables:
             return
         self.calcAndSetBattleDifficulty()
@@ -340,8 +376,8 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 info = self.notDeadList[i]
-                suitType = info[2] - 4
-                suitLevel = info[2]
+                suitType = 8
+                suitLevel = random.choice([15, 16, 17, 18, 19, 20])
                 suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
             diners.append((suit, 100))
 
@@ -350,9 +386,9 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             if simbase.config.GetBool('bossbot-boss-cheat', 0):
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
-                suitType = 8
-                suitLevel = 12
-                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
+                suitType = 1
+                suitLevel = 2
+                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 0)
             active.append(suit)
 
         return {'activeSuits': active,

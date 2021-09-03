@@ -142,8 +142,22 @@ def getSuitType(name):
     return index % suitsPerDept + 1
 
 
-def getRandomSuitType(level, rng = random):
-    return random.randint(max(level - 4, 1), min(level, 8))
+validCogs = {
+    1   :   [1,2,3,4,5],
+    2   :   [2,3,4,5,6],
+    3   :   [3,4,5,6,7],
+    4   :   [4,5,6,7,8],
+    5   :   [5,6,7,8,9],
+    6   :   [6,7,8,9,10,11,12],
+    7   :   [7,8,9,10,11,12,13,14,15],
+    8   :   [8,9,10,11,12,13,14,15,16,17,18,19,20]
+}
+def getRandomSuitType(cogLevel, rng = random):
+    while True:
+        suitLevel = random.randint(1, 8)
+        for lv in validCogs.get(suitLevel):
+            if cogLevel == lv:
+                return suitLevel
 
 
 def getRandomSuitByDept(dept):
