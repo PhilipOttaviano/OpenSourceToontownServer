@@ -3,6 +3,43 @@
 <Comment> {
   "bam2egg -o suitC-heads.egg suitC-heads.bam"
 }
+<Texture> tutorial_suits_palette_4amla_1 {
+  "/c/opensourcetoontown/OpenSourceToontownServer/game/resources/phase_3.5/models/char/phase_3.5/maps/tutorial_suits_palette_4amla_1.jpg"
+  <Scalar> alpha-file { "/c/opensourcetoontown/OpenSourceToontownServer/game/resources/phase_3.5/models/char/phase_3.5/maps/tutorial_suits_palette_4amla_1_a.rgb" }
+  <Scalar> format { rgba }
+  <Scalar> wrapu { repeat }
+  <Scalar> wrapv { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+  <Scalar> envtype { modulate }
+}
+<Texture> tutorial_suits_palette_3cmla_1 {
+  "/c/opensourcetoontown/OpenSourceToontownServer/game/resources/phase_3.5/models/char/phase_3.5/maps/tutorial_suits_palette_3cmla_1.jpg"
+  <Scalar> format { rgb }
+  <Scalar> wrapu { repeat }
+  <Scalar> wrapv { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+  <Scalar> envtype { modulate }
+}
+<Texture> tightwad {
+  "/c/opensourcetoontown/OpenSourceToontownServer/game/resources/phase_3.5/models/char/phase_3.5/maps/tightwad.jpg"
+  <Scalar> format { rgb }
+  <Scalar> wrapu { repeat }
+  <Scalar> wrapv { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+  <Scalar> envtype { modulate }
+}
+<Texture> flunky {
+  "/c/opensourcetoontown/OpenSourceToontownServer/game/resources/phase_3.5/models/char/phase_3.5/maps/flunky.jpg"
+  <Scalar> format { rgb }
+  <Scalar> wrapu { repeat }
+  <Scalar> wrapv { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+  <Scalar> envtype { modulate }
+}
 <VertexPool> suitC-heads.egg {
   <Vertex> 0 {
     -0.00679941987618804 0.597579002380371 1.33840000629425
@@ -774,595 +811,788 @@
   <Dart> { structured }
   <Group> coldcaller {
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 0 1 2 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 0 3 4 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 5 1 6 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 7 8 4 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 9 10 11 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 3 12 4 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 4 12 7 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 6 1 4 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 4 1 0 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 13 14 15 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 15 14 16 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 16 14 11 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 11 14 9 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 4 8 6 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 6 8 17 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 6 17 9 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 9 17 10 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 13 18 14 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 14 18 5 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 14 5 9 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 9 5 6 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> glasses {
     <Scalar> alpha { dual }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 19 20 21 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 21 20 22 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 20 23 22 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 22 23 24 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 24 23 25 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_4amla_1 }
       <VertexRef> { 25 23 26 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> flunky {
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 27 28 29 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 29 30 31 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 31 30 32 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 33 34 35 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 35 34 36 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 37 38 39 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 39 38 27 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 40 35 41 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 41 35 36 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 27 38 28 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 28 38 42 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 43 44 45 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 45 44 46 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 32 30 47 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 47 30 44 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 47 44 48 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 48 44 43 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 27 29 39 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 39 29 31 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 39 31 37 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 37 31 32 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 29 49 30 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 30 49 50 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 30 50 44 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 44 50 46 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 40 42 35 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 35 42 38 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 35 38 33 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 33 38 37 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 33 37 47 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { flunky }
       <VertexRef> { 47 37 32 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> gladhander {
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 51 52 53 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 54 53 55 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 55 53 52 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 54 55 56 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 56 55 57 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 58 59 60 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 60 59 61 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 62 63 64 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 64 63 65 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 51 66 67 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 67 66 68 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 67 68 69 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 69 68 64 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 69 64 70 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 70 64 65 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 69 70 71 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 71 70 72 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 71 72 59 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 59 72 61 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 67 69 73 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 73 69 71 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 73 71 57 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 57 71 59 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 57 59 56 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 56 59 58 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 51 67 52 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 52 67 73 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 52 73 55 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 55 73 57 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 62 64 74 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 74 64 68 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 74 68 75 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 75 68 66 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 75 66 53 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 53 66 51 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> micromanager {
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 76 77 78 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 79 80 81 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 82 83 84 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 85 86 87 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 88 81 89 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 87 90 89 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 89 90 88 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 82 84 91 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 91 84 92 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 93 94 95 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 95 94 96 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 97 81 98 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 98 81 99 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 81 100 79 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 79 100 96 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 87 86 90 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 90 86 101 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 90 101 88 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 88 101 102 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 93 95 103 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 103 95 82 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 103 82 104 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 104 82 91 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 104 91 105 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 105 91 106 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 83 107 102 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 102 107 100 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 102 100 88 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 88 100 81 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 94 108 96 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 96 108 109 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 96 109 79 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 79 109 99 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 79 99 80 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 80 99 81 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 76 85 77 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 77 85 87 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 77 87 78 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 78 87 89 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 100 107 96 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 96 107 83 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 96 83 95 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 95 83 82 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 83 102 84 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 84 102 101 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 84 101 92 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 92 101 86 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 92 86 91 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 91 86 85 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 91 85 106 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 106 85 76 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> moneybags {
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 110 111 112 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 113 114 115 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 116 117 118 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 118 117 119 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 120 121 114 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 114 121 115 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 116 122 123 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 123 122 124 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 125 126 112 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 112 126 110 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 125 127 126 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 126 127 128 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 126 128 110 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 110 128 129 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 111 115 112 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 112 115 121 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 112 121 125 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 125 121 120 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 125 120 127 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 127 120 130 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 131 130 132 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 132 130 120 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 132 120 113 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tutorial_suits_palette_3cmla_1 }
       <VertexRef> { 113 120 114 <Ref> { suitC-heads.egg } }
     }
   }
   <Group> tightwad {
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 133 134 135 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 136 137 138 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 138 137 139 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 134 140 135 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 135 140 141 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 142 143 144 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 144 143 145 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 139 137 135 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 135 137 133 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 140 146 141 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 141 146 147 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 141 147 143 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 143 147 148 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 149 150 136 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 136 150 151 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 136 151 137 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 137 151 133 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 149 136 152 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 152 136 138 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 152 138 144 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 144 138 139 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 144 139 142 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 142 139 135 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 142 135 143 <Ref> { suitC-heads.egg } }
     }
     <Polygon> {
+      <TRef> { tightwad }
       <VertexRef> { 143 135 141 <Ref> { suitC-heads.egg } }
     }
   }
