@@ -16,7 +16,7 @@ class BossbotHQ(CogHood.CogHood):
 
     def load(self):
         CogHood.CogHood.load(self)
-        self.sky.hide()
+        self.sky.setScale(2.0)
         self.parentFSM.getStateNamed('BossbotHQ').addChild(self.fsm)
 
     def unload(self):
