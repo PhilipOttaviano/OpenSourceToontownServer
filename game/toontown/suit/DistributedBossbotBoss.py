@@ -1448,6 +1448,13 @@ class DistributedBossbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         seq.start()
         self.activeIntervals[intervalName] = seq
 
+    def addMoreCogsSpeach(self):
+        from toontown.battle import PlayByPlayText
+        text = PlayByPlayText.PlayByPlayText()
+        textInterval = text.getShowInterval("The C.E.O will increase the cog limit!")
+        textInterval.start()
+
+
     def d_hitToon(self, toonId):
         self.notify.debug('----- d_hitToon')
         self.sendUpdate('hitToon', [toonId])

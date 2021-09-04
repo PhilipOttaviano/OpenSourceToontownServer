@@ -233,30 +233,93 @@ class TownBattle(StateData.StateData):
         if num == 1:
             self.toonPanels[0].setX(self.oddPos[1])
             self.toonPanels[0].show()
-        elif num == 2:
-            self.toonPanels[0].setX(self.evenPos[1])
-            self.toonPanels[0].show()
-            self.toonPanels[1].setX(self.evenPos[2])
-            self.toonPanels[1].show()
-        elif num == 3:
-            self.toonPanels[0].setX(self.oddPos[0])
-            self.toonPanels[0].show()
-            self.toonPanels[1].setX(self.oddPos[1])
-            self.toonPanels[1].show()
-            self.toonPanels[2].setX(self.oddPos[2])
-            self.toonPanels[2].show()
-        elif num == 4:
-            self.toonPanels[0].setX(self.evenPos[0])
-            self.toonPanels[0].show()
-            self.toonPanels[1].setX(self.evenPos[1])
-            self.toonPanels[1].show()
-            self.toonPanels[2].setX(self.evenPos[2])
-            self.toonPanels[2].show()
-            self.toonPanels[3].setX(self.evenPos[3])
-            self.toonPanels[3].show()
         else:
-            self.notify.error('Bad number of toons: %s' % num)
-        return None
+            if num == 2:
+                self.toonPanels[0].setX(self.evenPos[1])
+                self.toonPanels[0].show()
+                self.toonPanels[1].setX(self.evenPos[2])
+                self.toonPanels[1].show()
+            else:
+                if num == 3:
+                    self.toonPanels[0].setX(self.oddPos[0])
+                    self.toonPanels[0].show()
+                    self.toonPanels[1].setX(self.oddPos[1])
+                    self.toonPanels[1].show()
+                    self.toonPanels[2].setX(self.oddPos[2])
+                    self.toonPanels[2].show()
+                else:
+                    if num == 4:
+                        self.toonPanels[0].setX(self.evenPos[0])
+                        self.toonPanels[0].show()
+                        self.toonPanels[1].setX(self.evenPos[1])
+                        self.toonPanels[1].show()
+                        self.toonPanels[2].setX(self.evenPos[2])
+                        self.toonPanels[2].show()
+                        self.toonPanels[3].setX(self.evenPos[3])
+                        self.toonPanels[3].show()
+                    else:
+                        if num == 5:
+                            self.toonPanels[0].setX(self.oddPos[3])
+                            self.toonPanels[0].show()
+                            self.toonPanels[1].setX(self.oddPos[0])
+                            self.toonPanels[1].show()
+                            self.toonPanels[2].setX(self.oddPos[1])
+                            self.toonPanels[2].show()
+                            self.toonPanels[3].setX(self.oddPos[2])
+                            self.toonPanels[3].show()
+                            self.toonPanels[4].setX(self.oddPos[4])
+                            self.toonPanels[4].show()
+                        else:
+                            if num == 6:
+                                self.toonPanels[0].setX(self.evenPos[4] * 0.85)
+                                self.toonPanels[0].show()
+                                self.toonPanels[1].setX(self.evenPos[0] * 0.85)
+                                self.toonPanels[1].show()
+                                self.toonPanels[2].setX(self.evenPos[1] * 0.85)
+                                self.toonPanels[2].show()
+                                self.toonPanels[3].setX(self.evenPos[2] * 0.85)
+                                self.toonPanels[3].show()
+                                self.toonPanels[4].setX(self.evenPos[3] * 0.85)
+                                self.toonPanels[4].show()
+                                self.toonPanels[5].setX(self.evenPos[5] * 0.85)
+                                self.toonPanels[5].show()
+                            else:
+                                if num == 7:
+                                    self.toonPanels[0].setX(self.oddPos[5] * 0.8)
+                                    self.toonPanels[0].show()
+                                    self.toonPanels[1].setX(self.oddPos[3] * 0.8)
+                                    self.toonPanels[1].show()
+                                    self.toonPanels[2].setX(self.oddPos[0] * 0.8)
+                                    self.toonPanels[2].show()
+                                    self.toonPanels[3].setX(self.oddPos[1] * 0.8)
+                                    self.toonPanels[3].show()
+                                    self.toonPanels[4].setX(self.oddPos[2] * 0.8)
+                                    self.toonPanels[4].show()
+                                    self.toonPanels[5].setX(self.oddPos[4] * 0.8)
+                                    self.toonPanels[5].show()
+                                    self.toonPanels[6].setX(self.oddPos[6] * 0.8)
+                                    self.toonPanels[6].show()
+                                else:
+                                    if num == 8:
+                                        self.toonPanels[0].setX(self.evenPos[6] * 0.75)
+                                        self.toonPanels[0].show()
+                                        self.toonPanels[1].setX(self.evenPos[4] * 0.75)
+                                        self.toonPanels[1].show()
+                                        self.toonPanels[2].setX(self.evenPos[0] * 0.75)
+                                        self.toonPanels[2].show()
+                                        self.toonPanels[3].setX(self.evenPos[1] * 0.75)
+                                        self.toonPanels[3].show()
+                                        self.toonPanels[4].setX(self.evenPos[2] * 0.75)
+                                        self.toonPanels[4].show()
+                                        self.toonPanels[5].setX(self.evenPos[3] * 0.75)
+                                        self.toonPanels[5].show()
+                                        self.toonPanels[6].setX(self.evenPos[5] * 0.75)
+                                        self.toonPanels[6].show()
+                                        self.toonPanels[7].setX(self.evenPos[7] * 0.75)
+                                        self.toonPanels[7].show()
+                                    else:
+                                        self.notify.error('Bad number of toons: %s' % num)
+        return
 
     def updateChosenAttacks(self, battleIndices, tracks, levels, targets):
         self.notify.debug('updateChosenAttacks bi=%s tracks=%s levels=%s targets=%s' % (battleIndices,

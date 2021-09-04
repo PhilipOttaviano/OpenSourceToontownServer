@@ -66,6 +66,8 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         self.battleFourDuration = simbase.air.config.GetInt('battle-four-duration', 1800)
         self.overtimeOneStart = float(self.overtimeOneTime) / self.battleFourDuration
         self.moveAttackAllowed = True
+        self.round = 0
+        self.allowedCogs = 4
 
     def delete(self):
         self.notify.debug('DistributedBossbotBossAI.delete')
@@ -134,6 +136,39 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             suits = self.generateDinerSuits()
             return suits
 
+    def handleRoundDone(self, battle, suits, activeSuits, toonIds, totalHp, deadSuits):
+        self.round += 1
+
+        self.sendUpdate('addMoreCogsSpeach', [])
+        totalMaxHp = 0
+        for suit in suits:
+            totalMaxHp += suit.maxHP
+
+        for suit in deadSuits:
+            activeSuits.remove(suit)
+        if self.round == 2 and self.allowedCogs < 7:
+            #self.sendUpdate('addMoreCogsSpeach', [])
+            self.allowedCogs += 1
+            self.round = 0
+        elif self.round == 2 and self.allowedCogs >= 7:
+            self.allowedCogs = 1
+            self.round = 0
+
+
+        joinedReserves = []
+        if len(self.reserveSuits) > 0 and len(activeSuits) < self.allowedCogs:
+            hpPercent = 100 - totalHp / totalMaxHp * 100.0
+            for info in self.reserveSuits:
+                if len(activeSuits) < self.allowedCogs:
+                    suits.append(info[0])
+                    activeSuits.append(info[0])
+                    joinedReserves.append(info)
+
+            for info in joinedReserves:
+                self.reserveSuits.remove(info)
+
+        battle.resume(joinedReserves)
+
     def invokeSuitPlanner(self, buildingCode, skelecog):
         suits = DistributedBossCogAI.DistributedBossCogAI.invokeSuitPlanner(self, buildingCode, skelecog)
         activeSuits = suits['activeSuits'][:]
@@ -151,6 +186,8 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             battle = DistributedBattleWaitersAI.DistributedBattleWaitersAI(self.air, self, roundCallback, finishCallback, battleSide)
         else:
             battle = DistributedBattleDinersAI.DistributedBattleDinersAI(self.air, self, roundCallback, finishCallback, battleSide)
+            self.round = 0
+            self.allowedCogs = 2
         self.setBattlePos(battle, bossCogPosHpr, battlePosHpr)
         battle.suitsKilled = self.suitsKilled
         battle.battleCalc.toonSkillPtsGained = self.toonSkillPtsGained
@@ -376,18 +413,18 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 info = self.notDeadList[i]
-                suitType = 8
-                suitLevel = random.choice([15, 16, 17, 18, 19, 20])
-                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
+                suitType = 5
+                suitLevel = random.choice([8, 9])
+                suit = self.__genSuitObject(self.zoneId, suitType, random.choice(['c', 's', 'm', 'l']), suitLevel, 0)
             diners.append((suit, 100))
 
         active = []
-        for i in xrange(2):
+        for i in xrange(1):
             if simbase.config.GetBool('bossbot-boss-cheat', 0):
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
-                suitType = 1
-                suitLevel = 2
+                suitType = 8
+                suitLevel = 20
                 suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 0)
             active.append(suit)
 

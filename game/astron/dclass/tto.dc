@@ -3529,6 +3529,7 @@ dclass DistributedBossbotBoss : DistributedBossCog {
   setSpeedDamage(uint16, uint8, int16) broadcast ram;
   reachedTable(uint8) airecv clsend;
   hitTable(uint8) airecv clsend;
+  addMoreCogsSpeach();
   awayFromTable(uint8) airecv clsend;
   toonGotHealed(uint32) broadcast;
   requestGetToonup(int8, int8, uint32) airecv clsend;

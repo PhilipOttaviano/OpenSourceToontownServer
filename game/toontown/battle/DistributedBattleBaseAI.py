@@ -99,6 +99,7 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
     def clearAttacks(self):
         self.toonAttacks = {}
         self.suitAttacks = getDefaultSuitAttacks()
+        self.suitCheats = getDefaultSuitAttacks()
 
     def requestDelete(self):
         if hasattr(self, 'fsm'):
@@ -329,6 +330,7 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
         movie=[self.movieHasBeenMade, self.activeToons, suitIds]
         toonAttacks=[]
         suitAttacks=[]
+        suitCheats=[]
 
         for toon in self.activeToons:
             if toon not in self.toonAttacks:
@@ -373,6 +375,7 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
             suitAttacks.append([index, attackCol, target] + attack[3:])  # Remaining 4 (3-7)
 
         movie+=[toonAttacks, suitAttacks, self.gradualDamages]
+
         return movie
 
     def d_setChosenToonAttacks(self):
@@ -1159,7 +1162,7 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
         return len(self.suits) < self.maxSuits and self.isJoinable()
 
     def toonCanJoin(self):
-        return len(self.toons) < 4 and self.isJoinable()
+        return len(self.toons) < 5 and self.isJoinable()
 
     def __requestMovie(self, timeout = 0):
         if self.adjustFsm.getCurrentState().getName() == 'Adjusting':
@@ -1586,7 +1589,7 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
         lastActiveSuitDied = 0
         if len(self.activeSuits) == 0 and len(self.pendingSuits) == 0:
             lastActiveSuitDied = 1
-        for i in xrange(4):
+        for i in xrange(8):
             attack = self.suitAttacks[i][SUIT_ATK_COL]
             if attack != NO_ATTACK:
                 suitId = self.suitAttacks[i][SUIT_ID_COL]

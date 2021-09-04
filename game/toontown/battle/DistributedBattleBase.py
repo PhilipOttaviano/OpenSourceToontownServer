@@ -812,8 +812,7 @@ class DistributedBattleBase(DistributedNode.DistributedNode, BattleBase):
         track.start(ts)
         track.delayDelete = DelayDelete.DelayDelete(suit, 'makeSuitJoin')
         self.storeInterval(track, trackName)
-        if ToontownBattleGlobals.SkipMovie:
-            track.finish()
+
 
     def __handleSuitJoinDone(self, suit, ts):
         self.notify.debug('suit: %d is now pending' % suit.doId)
@@ -1185,7 +1184,6 @@ class DistributedBattleBase(DistributedNode.DistributedNode, BattleBase):
             NametagGlobals.setMasterArrowsOn(0)
         if ToontownBattleGlobals.SkipMovie:
             self.movie.play(ts, self.__handleMovieDone)
-            self.movie.finish()
         else:
             self.movie.play(ts, self.__handleMovieDone)
         return None
@@ -1347,8 +1345,6 @@ class DistributedBattleBase(DistributedNode.DistributedNode, BattleBase):
             track = Sequence(adjustTrack, e, name=self.adjustName)
             self.storeInterval(track, self.adjustName)
             track.start(ts)
-            if ToontownBattleGlobals.SkipMovie:
-                track.finish()
         else:
             self.notify.warning('adjust() - nobody needed adjusting')
             self.__adjustDone()

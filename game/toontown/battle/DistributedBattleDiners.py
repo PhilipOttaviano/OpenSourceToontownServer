@@ -94,10 +94,11 @@ class DistributedBattleDiners(DistributedBattleFinal.DistributedBattleFinal):
         dur = suit.getDuration('landing')
         fr = suit.getFrameRate('landing')
         landingDur = dur
-        totalDur = 7.3
+        totalDur = 6.0
         animTimeInAir = totalDur - dur
         flyingDur = animTimeInAir
         impactLength = dur - animTimeInAir
+
         tableIndex = chairInfo[0]
         chairIndex = chairInfo[1]
         table = self.bossCog.tables[tableIndex]
@@ -109,7 +110,7 @@ class DistributedBattleDiners(DistributedBattleFinal.DistributedBattleFinal):
         suit.setHpr(chairHpr)
         wayPoint = (chairPos + destPos) / 2.0
         wayPoint.setZ(wayPoint.getZ() + 20)
-        moveIval = Sequence(Func(suit.headsUp, self), Func(suit.pose, 'landing', 0), ProjectileInterval(suit, duration=flyingDur, startPos=chairPos, endPos=destPos, gravityMult=0.25), ActorInterval(suit, 'landing'))
+        moveIval = Sequence(Func(suit.headsUp, self), Func(suit.pose, 'landing', 0), ProjectileInterval(suit, duration=flyingDur, startPos=chairPos, endPos=destPos, gravityMult=0.0), ActorInterval(suit, 'landing'))
         if suit.prop == None:
             suit.prop = BattleProps.globalPropPool.getProp('propeller')
         propDur = suit.prop.getDuration('propeller')
