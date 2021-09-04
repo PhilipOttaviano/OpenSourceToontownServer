@@ -38,7 +38,8 @@ suitHeadTypes = ['f',
  'ms',
  'tf',
  'm',
- 'mh']
+ 'mh',
+ 'qm']
 suitATypes = ['ym',
  'hh',
  'tbc',
@@ -61,7 +62,8 @@ suitBTypes = ['p',
  'bc',
  'ls',
  'tm',
- 'ms']
+ 'ms',
+ 'qm']
 suitCTypes = ['f',
  'mm',
  'cr',
@@ -97,6 +99,12 @@ suitsPerLevel = [1,
  1]
 suitsPerDept = 8
 goonTypes = ['pg', 'sg']
+customSuitDepts = {
+    'qm': 'm'
+}
+customSuitLevels = {
+    'qm': 10
+}
 
 def getSuitBodyType(name):
     if name in suitATypes:
@@ -119,6 +127,8 @@ def getSuitDept(name):
         return suitDepts[2]
     elif index < suitsPerDept * 4:
         return suitDepts[3]
+    elif name in customSuitDepts.keys():
+        return customSuitDepts.get(name)
     else:
         print 'Unknown dept for suit name: ', name
         return None

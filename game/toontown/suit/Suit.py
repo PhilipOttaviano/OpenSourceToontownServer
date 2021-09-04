@@ -114,6 +114,7 @@ bc = (('phone', 'phone', 5), ('hold-pencil', 'hold-pencil', 5))
 nc = (('phone', 'phone', 5), ('throw-object', 'throw-object', 5))
 mb = (('magic1', 'magic1', 5), ('throw-paper', 'throw-paper', 3.5))
 ls = (('throw-paper', 'throw-paper', 5), ('throw-object', 'throw-object', 5), ('hold-pencil', 'hold-pencil', 5))
+qm = (('throw-paper', 'throw-paper', 5), ('throw-object', 'throw-object', 5), ('hold-pencil', 'hold-pencil', 5))
 rb = (('glower', 'glower', 5), ('magic1', 'magic1', 5), ('golf-club-swing', 'golf-club-swing', 5))
 bf = (('pickpocket', 'pickpocket', 5),
  ('rubber-stamp', 'rubber-stamp', 5),
@@ -551,6 +552,12 @@ class Suit(Avatar.Avatar):
             self.generateBody()
             self.generateHead('loanshark')
             self.setHeight(8.58)
+        elif dna.name == 'qm':
+            self.scale = 6.5 / bSize
+            self.handColor = VBase4(0.5, 0.85, 0.75, 1.0)
+            self.generateBody()
+            self.generateHead('tt_ene_chr_quarter_master')
+            self.setHeight(8.58)
         elif dna.name == 'rb':
             self.scale = 7.0 / aSize
             self.handColor = SuitDNA.moneyPolyColor
@@ -766,21 +773,27 @@ class Suit(Avatar.Avatar):
             filePrefix, phase = ModelDict[self.style.body]
         headModel = loader.loadModel('phase_' + str(phase) + filePrefix + 'heads')
         headReferences = headModel.findAllMatches('**/' + headType)
-        for i in xrange(0, headReferences.getNumPaths()):
-            if base.config.GetBool('want-new-cogs', 0):
-                headPart = self.instance(headReferences.getPath(i), 'modelRoot', 'to_head')
-                if not headPart:
+        dna = self.style
+        if headType == 'tt_ene_chr_quarter_master':
+            qMaster = loader.loadModel('phase_14/models/char/tt_ene_chr_quarter_master.bam')
+            qMaster.reparentTo(self.find('**/joint_head'))
+            self.headParts.append(qMaster)
+        else:
+            for i in xrange(0, headReferences.getNumPaths()):
+                if base.config.GetBool('want-new-cogs', 0):
+                    headPart = self.instance(headReferences.getPath(i), 'modelRoot', 'to_head')
+                    if not headPart:
+                        headPart = self.instance(headReferences.getPath(i), 'modelRoot', 'joint_head')
+                else:
                     headPart = self.instance(headReferences.getPath(i), 'modelRoot', 'joint_head')
-            else:
-                headPart = self.instance(headReferences.getPath(i), 'modelRoot', 'joint_head')
-            if self.headTexture:
-                headTex = loader.loadTexture('phase_' + str(phase) + '/maps/' + self.headTexture)
-                headTex.setMinfilter(Texture.FTLinearMipmapLinear)
-                headTex.setMagfilter(Texture.FTLinear)
-                headPart.setTexture(headTex, 1)
-            if self.headColor:
-                headPart.setColor(self.headColor)
-            self.headParts.append(headPart)
+                if self.headTexture:
+                    headTex = loader.loadTexture('phase_' + str(phase) + '/maps/' + self.headTexture)
+                    headTex.setMinfilter(Texture.FTLinearMipmapLinear)
+                    headTex.setMagfilter(Texture.FTLinear)
+                    headPart.setTexture(headTex, 1)
+                if self.headColor:
+                    headPart.setColor(self.headColor)
+                self.headParts.append(headPart)
 
         headModel.removeNode()
 
