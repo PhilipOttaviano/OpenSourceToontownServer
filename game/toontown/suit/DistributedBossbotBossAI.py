@@ -136,25 +136,6 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             suits = self.generateDinerSuits()
             return suits
 
-    def handleRoundDone(self, battle, suits, activeSuits, toonIds, totalHp, deadSuits):
-        self.round += 1
-
-        self.sendUpdate('addMoreCogsSpeach', [])
-        totalMaxHp = 0
-        for suit in suits:
-            totalMaxHp += suit.maxHP
-
-        for suit in deadSuits:
-            activeSuits.remove(suit)
-        if self.round == 2 and self.allowedCogs < 7:
-            #self.sendUpdate('addMoreCogsSpeach', [])
-            self.allowedCogs += 1
-            self.round = 0
-        elif self.round == 2 and self.allowedCogs >= 7:
-            self.allowedCogs = 1
-            self.round = 0
-
-
         joinedReserves = []
         if len(self.reserveSuits) > 0 and len(activeSuits) < self.allowedCogs:
             hpPercent = 100 - totalHp / totalMaxHp * 100.0
@@ -413,19 +394,19 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 info = self.notDeadList[i]
-                suitType = 5
-                suitLevel = random.choice([8, 9])
-                suit = self.__genSuitObject(self.zoneId, suitType, random.choice(['c', 's', 'm', 'l']), suitLevel, 0)
+                suitType = 8
+                suitLevel = 12
+                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
             diners.append((suit, 100))
 
         active = []
-        for i in xrange(1):
+        for i in xrange(2):
             if simbase.config.GetBool('bossbot-boss-cheat', 0):
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 suitType = 8
-                suitLevel = 20
-                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 0)
+                suitLevel = 12
+                suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
             active.append(suit)
 
         return {'activeSuits': active,
