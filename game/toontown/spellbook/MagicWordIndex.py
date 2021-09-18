@@ -1134,7 +1134,7 @@ class SetGM(MagicWord):
         #if gmId == 1:
         #    return 'This GM is reserved for the Toon Council. Use ~setGM 2 instead.'
 
-        if not 0 <= gmId <= 8:
+        if gmId <= 0 or gmId >= 8:
             return "Invalid GM Icon specified."
 
         accessLevel = toon.getAccessLevel()
@@ -1145,11 +1145,11 @@ class SetGM(MagicWord):
                 return "Your access level is too low to use this GM icon."
 
         if toon.isGM() and gmId != 0:
-            toon.b_setGM(0, name)
+            toon.b_setGM(0)
         elif toon.isGM and gmId == 0:
             toon.b_setGM(0, True)
 
-        toon.b_setGM(gmId, name)
+        toon.b_setGM(gmId)
 
         if __debug__:
             pass
@@ -1157,6 +1157,7 @@ class SetGM(MagicWord):
             toon.d_requestVerifyGM()
 
         return "You have set %s to GM type %s" % (toon.getName(), gmId)
+
 
 
 class SetTickets(MagicWord):

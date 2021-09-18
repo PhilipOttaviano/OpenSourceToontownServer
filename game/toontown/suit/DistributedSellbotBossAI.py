@@ -36,6 +36,17 @@ class DistributedSellbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             self.hitCountDamage = SellbotBossGlobals.HitCountDamage
         self.recoverRate = 0
         self.recoverStartTime = 0
+        self.skipedToonsList = []
+
+    def skipVPCutscene(self, toonId):
+        self.skipedToonsList.append(toonId)
+
+        if len(self.skipedToonsList) == len(self.involvedToons):
+            self.exitIntroduction()
+            self.setState("BattleOne")
+            self.sendUpdate('skipTheMovie', [])
+
+
 
     def generateWithRequired(self, zoneId):
         self.numRentalDiguises, self.numNormalDiguises = self.countDisguises()

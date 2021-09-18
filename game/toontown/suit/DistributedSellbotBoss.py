@@ -67,6 +67,7 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         self.nerfed = ToontownGlobals.SELLBOT_NERF_HOLIDAY in base.cr.newsManager.getHolidayIdList()
         self.localToonPromoted = True
         self.resetMaxDamage()
+        self.skipedToonsList = []
         return
 
     def announceGenerate(self):
@@ -115,13 +116,37 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         disk.find('**/+CollisionNode').setName('BossZap')
         disk.reparentTo(self.pelvis)
         disk.setZ(0.8)
+        gui=loader.loadModel('phase_3/models/gui/pick_a_toon_gui')
+        quitHover=gui.find('**/QuitBtn_RLVR')
+        self.quitButton=DirectButton(image=(quitHover, quitHover, quitHover), relief=None,
+                                     text="Skip Cutscene", text_font=ToontownGlobals.getSignFont(),
+                                     text_fg=(0.977, 0.816, 0.133, 1), text_pos=TTLocalizer.ACquitButtonPos,
+                                     text_scale=TTLocalizer.ACquitButton, image_scale=0.1, image1_scale=1.05,
+                                     image2_scale=1, scale=1.05, parent=base.a2dBottomRight,
+                                     pos=(0, 0, 0), command=self.__handleSkipCutscene)
         self.loadEnvironment()
         self.__makeCagedToon()
         self.__loadMopaths()
         if OneBossCog != None:
             self.notify.warning('Multiple BossCogs visible.')
         OneBossCog = self
+
+
         return
+
+    def skipTheMovie(self):
+        self.setState('BattleOne')
+        self.exitIntroduction()
+
+    def __handleSkipCutscene(self):
+        for toonId in self.involvedToons:
+            toon = self.cr.doId2do.get(toonId)
+            if toon == localAvatar:
+                self.skipedToonsList.append(toonId)
+                self.sendUpdate('skipVPCutscene', [toonId])
+            else:
+                pass
+
 
     def disable(self):
         global OneBossCog
@@ -553,6 +578,7 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         self.betweenBattleMusic = base.loader.loadMusic('phase_9/audio/bgm/encntr_toon_winning.ogg')
         self.battleTwoMusic = base.loader.loadMusic('phase_7/audio/bgm/encntr_suit_winning_indoor.ogg')
         self.geom.reparentTo(render)
+        self.quitButton.hide()
 
     def unloadEnvironment(self):
         DistributedBossCog.DistributedBossCog.unloadEnvironment(self)
@@ -565,6 +591,8 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         del self.rampA
         del self.rampB
         del self.rampC
+        self.quitButton.destroy()
+        del self.quitButton
 
     def __loadMopaths(self):
         self.toonsEnterA = Mopath.Mopath()
@@ -703,11 +731,13 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
         self.rampB.request('extended')
         self.rampC.request('retracted')
         self.setCageIndex(0)
+        self.quitButton.show()
         base.playMusic(self.promotionMusic, looping=1, volume=0.9)
 
     def exitIntroduction(self):
         DistributedBossCog.DistributedBossCog.exitIntroduction(self)
         self.promotionMusic.stop()
+        self.quitButton.show()
 
     def enterBattleOne(self):
         DistributedBossCog.DistributedBossCog.enterBattleOne(self)

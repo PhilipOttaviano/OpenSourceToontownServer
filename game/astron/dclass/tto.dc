@@ -1379,8 +1379,11 @@ dclass DistributedSellbotBoss : DistributedBossCog {
   setBossDamage(uint16, uint8, int16) broadcast ram;
   setState(string) broadcast ram;
   hitBoss(uint8) airecv clsend;
+  exitIntroduction() broadcast;
+  skipTheMovie() broadcast;
   hitBossInsides() airecv clsend;
   hitToon(uint32) airecv clsend;
+  skipVPCutscene(uint32) airecv clsend;
   finalPieSplat() airecv clsend;
   touchCage() airecv clsend;
   doStrafe(uint8, uint8) broadcast;

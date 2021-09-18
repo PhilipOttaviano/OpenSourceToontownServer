@@ -151,7 +151,7 @@ class DistributedBossbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
     def loadEnvironment(self):
         self.notify.debug('----- loadEnvironment')
         DistributedBossCog.DistributedBossCog.loadEnvironment(self)
-        self.geom = loader.loadModel('phase_12/models/bossbotHQ/BanquetInterior_1')
+        self.geom = loader.loadModel('phase_12/models/bossbotHQ/director_banquet')
         self.elevatorEntrance = self.geom.find('**/elevator_origin')
         elevatorModel = loader.loadModel('phase_12/models/bossbotHQ/BB_Inside_Elevator')
         if not elevatorModel:
