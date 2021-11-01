@@ -62,10 +62,15 @@ class DistCogdoMazeGameAI(DistCogdoGameAI, DistCogdoMazeGameBase):
             self.suits[serialNum] = Globals.SuitData[Globals.SuitTypes.SlowMinion]['hp']
             serialNum += 1
 
+        for i in xrange(self._numSuits[3]):
+            self.suits[serialNum] = Globals.SuitData[Globals.SuitTypes.Hollywood]['hp']
+            serialNum += 1
+
         self._totalSuits = serialNum
         self.maxPickups = self._numSuits[0] * Globals.SuitData[0]['memos']
         self.maxPickups += self._numSuits[1] * Globals.SuitData[1]['memos']
         self.maxPickups += self._numSuits[2] * Globals.SuitData[2]['memos']
+        self.maxPickups += self._numSuits[3] * Globals.SuitData[3]['memos']
 
     def generate(self):
         DistCogdoGameAI.generate(self)

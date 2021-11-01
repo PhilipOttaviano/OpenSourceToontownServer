@@ -105,6 +105,8 @@ def getWhereName(zoneId, isToon):
                     where = 'mintInterior'
                 else:
                     zoneUtilNotify.error('unknown cogHQ interior for hood: ' + str(getHoodId(zoneId)))
+            elif zoneId == SellbotWestWing:
+                where = 'swagtoryInterior'
             else:
                 zoneUtilNotify.error('unknown cogHQ where: ' + str(zoneId))
         elif suffix == 0:

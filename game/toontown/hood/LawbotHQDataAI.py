@@ -11,6 +11,7 @@ from toontown.suit import DistributedLawbotBossAI
 from toontown.building import DistributedCJElevatorAI
 from toontown.building import FADoorCodes
 from toontown.building import DistributedBoardingPartyAI
+from toontown.pipeline import DistributedCogHQGoonAI
 
 class LawbotHQDataAI(HoodDataAI.HoodDataAI):
     notify = DirectNotifyGlobal.directNotify.newCategory('LawbotHQDataAI')

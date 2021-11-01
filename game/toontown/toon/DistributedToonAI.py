@@ -1654,9 +1654,6 @@ class DistributedToonAI(DistributedPlayerAI.DistributedPlayerAI, DistributedSmoo
                     newQuestHistory.remove(Quests.VISIT_QUEST_ID)
 
                 self.b_setQuestHistory(newQuestHistory)
-                if finalReward:
-                    newRewardHistory = self.rewardHistory + [finalReward]
-                    self.b_setRewardHistory(self.rewardTier, newRewardHistory)
 
     def removeAllTracesOfQuest(self, questId, rewardId):
         self.notify.debug('removeAllTracesOfQuest: questId: %s rewardId: %s' % (questId, rewardId))
@@ -1665,11 +1662,7 @@ class DistributedToonAI(DistributedPlayerAI.DistributedPlayerAI, DistributedSmoo
         self.notify.debug('removeAllTracesOfQuest: quests after: %s' % self.quests)
         self.notify.debug('removeAllTracesOfQuest: questHistory before: %s' % self.questHistory)
         removedQuestHistory = self.removeQuestFromHistory(questId)
-        self.notify.debug('removeAllTracesOfQuest: questHistory after: %s' % self.questHistory)
-        self.notify.debug('removeAllTracesOfQuest: reward history before: %s' % self.rewardHistory)
-        removedRewardHistory = self.removeRewardFromHistory(rewardId)
-        self.notify.debug('removeAllTracesOfQuest: reward history after: %s' % self.rewardHistory)
-        return (removedQuest, removedQuestHistory, removedRewardHistory)
+        return (removedQuest, removedQuestHistory)
 
     def requestDeleteQuest(self, questDesc):
         if len(questDesc) != 5:
@@ -1678,15 +1671,15 @@ class DistributedToonAI(DistributedPlayerAI.DistributedPlayerAI, DistributedSmoo
             return
         questId = questDesc[0]
         rewardId = questDesc[3]
-        if not self.hasQuest(questId, rewardId=rewardId):
+        if not self.hasQuest(questId):
             self.air.writeServerEvent('suspicious', self.doId, "Toon tried to delete quest they don't have %s" % str(questDesc))
             self.notify.warning("%s.requestDeleteQuest(%s) -- Toon doesn't have that quest" % (self, str(questDesc)))
             return
-        if not Quests.isQuestJustForFun(questId, rewardId):
+        if not Quests.isQuestJustForFun(questId):
             self.air.writeServerEvent('suspicious', self.doId, 'Toon tried to delete non-Just For Fun quest %s' % str(questDesc))
             self.notify.warning('%s.requestDeleteQuest(%s) -- Tried to cancel non-Just For Fun quest' % (self, str(questDesc)))
             return
-        removedStatus = self.removeAllTracesOfQuest(questId, rewardId)
+        removedStatus = self.removeAllTracesOfQuest(questId)
         if 0 in removedStatus:
             self.notify.warning('%s.requestDeleteQuest(%s) -- Failed to remove quest, status=%s' % (self, str(questDesc), removedStatus))
 
@@ -1952,42 +1945,6 @@ class DistributedToonAI(DistributedPlayerAI.DistributedPlayerAI, DistributedSmoo
 
     def getQuestHistory(self):
         return self.questHistory
-
-    def removeQuestFromHistory(self, questId):
-        if questId in self.questHistory:
-            self.questHistory.remove(questId)
-            self.d_setQuestHistory(self.questHistory)
-            return 1
-        else:
-            return 0
-
-    def removeRewardFromHistory(self, rewardId):
-        rewardTier, rewardHistory = self.getRewardHistory()
-        if rewardId in rewardHistory:
-            rewardHistory.remove(rewardId)
-            self.b_setRewardHistory(rewardTier, rewardHistory)
-            return 1
-        else:
-            return 0
-
-    def b_setRewardHistory(self, tier, rewardList):
-        self.setRewardHistory(tier, rewardList)
-        self.d_setRewardHistory(tier, rewardList)
-
-    def d_setRewardHistory(self, tier, rewardList):
-        self.sendUpdate('setRewardHistory', [tier, rewardList])
-
-    def setRewardHistory(self, tier, rewardList):
-        self.air.writeServerEvent('questTier', self.getDoId(), str(tier))
-        self.notify.debug('setting reward history to tier %s, %s' % (tier, rewardList))
-        self.rewardTier = tier
-        self.rewardHistory = rewardList
-
-    def getRewardHistory(self):
-        return (self.rewardTier, self.rewardHistory)
-
-    def getRewardTier(self):
-        return self.rewardTier
 
     def fixAvatar(self):
         anyChanged = 0

@@ -39,7 +39,11 @@ suitHeadTypes = ['f',
  'tf',
  'm',
  'mh',
- 'qm']
+ 'qm',
+ 'avo',
+ 'ck',
+ 'sm',
+ 'sec']
 suitATypes = ['ym',
  'hh',
  'tbc',
@@ -47,17 +51,20 @@ suitATypes = ['ym',
  'bs',
  'le',
  'bw',
+ 'sec',
  'pp',
  'nc',
  'rb',
  'nd',
  'tf',
  'm',
- 'mh']
+ 'mh',
+ 'sm']
 suitBTypes = ['p',
  'ds',
  'b',
  'ac',
+ 'ck',
  'sd',
  'bc',
  'ls',
@@ -67,6 +74,7 @@ suitBTypes = ['p',
 suitCTypes = ['f',
  'mm',
  'cr',
+ 'avo',
  'bf',
  'sc',
  'tw',
@@ -100,7 +108,11 @@ suitsPerLevel = [1,
 suitsPerDept = 8
 goonTypes = ['pg', 'sg']
 customSuitDepts = {
-    'qm': 'm'
+    'qm': 'm',
+    'avo': 'l',
+    'ck': 'l',
+    'sm': 's',
+    'sec': 'l'
 }
 customSuitLevels = {
     'qm': 10
@@ -157,10 +169,12 @@ validCogs = {
     2   :   [2,3,4,5,6],
     3   :   [3,4,5,6,7],
     4   :   [4,5,6,7,8],
-    5   :   [5,6,7,8,9,10,11,12],
+    5   :   [5,6,7,8,9],
     6   :   [6,7,8,9,10,11,12],
     7   :   [7,8,9,10,11,12,13,14,15],
-    8   :   [8,9,10,11,12,13,14,15,16,17,18,19,20]
+    8   :   [8,9,10,11,12,13,14,15,16,17,18,19,20],
+    9   :   [12,13,14,15,16,17,18],
+    10  :  [15,16,17,18,19,20,21]
 }
 def getRandomSuitType(cogLevel, rng = random):
     while True:

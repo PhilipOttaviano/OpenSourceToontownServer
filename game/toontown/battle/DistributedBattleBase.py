@@ -20,8 +20,9 @@ from toontown.hood import ZoneUtil
 from toontown.distributed import DelayDelete
 from toontown.toon import TTEmote
 from otp.avatar import Emote
+from toontown.pipeline import DistributedBattleCommunicatorBase
 
-class DistributedBattleBase(DistributedNode.DistributedNode, BattleBase):
+class DistributedBattleBase(DistributedNode.DistributedNode, BattleBase, ):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedBattleBase')
     id = 0
     camPos = ToontownBattleGlobals.BattleCamDefaultPos

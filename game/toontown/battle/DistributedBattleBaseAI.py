@@ -18,6 +18,7 @@ from toontown.toonbase import ToontownGlobals
 import random
 from toontown.toon import NPCToons
 from toontown.pets import DistributedPetProxyAI
+from toontown.pipeline import DistributedBattleCommunicatorBaseAI
 
 class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBase):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedBattleBaseAI')
@@ -474,15 +475,12 @@ class DistributedBattleBaseAI(DistributedObjectAI.DistributedObjectAI, BattleBas
 
     def suitRequestJoin(self, suit):
         self.notify.debug('suitRequestJoin(%d)' % suit.getDoId())
-        if self.suitCanJoin():
-            self.addSuit(suit)
-            self.__joinSuit(suit)
-            self.d_setMembers()
-            suit.prepareToJoinBattle()
-            return 1
-        else:
-            self.notify.warning('suitRequestJoin() - not joinable - joinable state: %s max suits: %d' % (self.joinableFsm.getCurrentState().getName(), self.maxSuits))
-            return 0
+
+        self.addSuit(suit)
+        self.__joinSuit(suit)
+        self.d_setMembers()
+        suit.prepareToJoinBattle()
+        return 1
 
     def addToon(self, avId):
         print 'DBB-addToon %s' % avId

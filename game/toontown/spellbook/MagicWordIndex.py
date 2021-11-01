@@ -298,7 +298,6 @@ class MaxToon(MagicWord):
         for id in toon.getQuests():
             toon.removeQuest(id)
         toon.b_setQuestCarryLimit(ToontownGlobals.MaxQuestCarryLimit)
-        toon.b_setRewardHistory(Quests.LOOPING_FINAL_TIER, toon.getRewardHistory()[1])
 
         allFish = TTLocalizer.FishSpeciesNames
         fishLists = [[], [], []]
@@ -859,10 +858,10 @@ class SpawnFO(MagicWord):
         except KeyError:
             return "You\'re not on a street!"
         if building is None:
-            return "Unable to spawn a %s Field Office with a difficulty of %d." % (ToontownGlobals.Dept2Dept.get(track), difficulty)
+            return "Unable to spawn a s Field Office with a difficulty of 4."
 
         building.cogdoTakeOver(track, difficulty, 2)
-        return "Successfully spawned a %s Field Office with a difficulty of %d!" % (ToontownGlobals.Dept2Dept.get(track), difficulty)
+        return "Successfully spawned a s Field Office with a difficulty of 4!"
 
 class SetCEIndex(MagicWord):
     aliases = ["setce", "ce", "cheesyeffect"]

@@ -66,7 +66,7 @@ class DistributedCashbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         activeSuits = cogs['activeSuits'] + skelecogs['activeSuits']
         reserveSuits = cogs['reserveSuits'] + skelecogs['reserveSuits']
         random.shuffle(activeSuits)
-        while len(activeSuits) > 4:
+        while len(activeSuits) > 8:
             suit = activeSuits.pop()
             reserveSuits.append((suit, 100))
 
@@ -86,10 +86,10 @@ class DistributedCashbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
             activeSuits.remove(suit)
 
         joinedReserves = []
-        if len(self.reserveSuits) > 0 and len(activeSuits) < 5:
+        if len(self.reserveSuits) > 0 and len(activeSuits) < 8:
             hpPercent = 100 - totalHp / totalMaxHp * 100.0
             for info in self.reserveSuits:
-                if info[1] <= hpPercent and len(activeSuits) < 5:
+                if info[1] <= hpPercent and len(activeSuits) < 8:
                     suits.append(info[0])
                     activeSuits.append(info[0])
                     joinedReserves.append(info)

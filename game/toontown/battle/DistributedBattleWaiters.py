@@ -16,8 +16,6 @@ class DistributedBattleWaiters(DistributedBattleFinal.DistributedBattleFinal):
 
     def announceGenerate(self):
         DistributedBattleFinal.DistributedBattleFinal.announceGenerate(self)
-        for suit in self.suits:
-            suit.makeWaiter()
 
         self.moveSuitsToInitialPos()
 
@@ -56,7 +54,6 @@ class DistributedBattleWaiters(DistributedBattleFinal.DistributedBattleFinal):
         suitTrack = Parallel()
         delay = 0
         for suit in suits:
-            suit.makeWaiter()
             suit.setState('Battle')
             if suit.dna.dept == 'l':
                 suit.reparentTo(self.bossCog)

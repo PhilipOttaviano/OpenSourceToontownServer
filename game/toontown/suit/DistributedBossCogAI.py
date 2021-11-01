@@ -573,10 +573,10 @@ class DistributedBossCogAI(DistributedAvatarAI.DistributedAvatarAI):
             activeSuits.remove(suit)
 
         joinedReserves = []
-        if len(self.reserveSuits) > 0 and len(activeSuits) < 5:
+        if len(self.reserveSuits) > 0 and len(activeSuits) < 6:
             hpPercent = 100 - totalHp / totalMaxHp * 100.0
             for info in self.reserveSuits:
-                if info[1] <= hpPercent and len(activeSuits) < 5:
+                if info[1] <= hpPercent and len(activeSuits) < 6:
                     suits.append(info[0])
                     activeSuits.append(info[0])
                     joinedReserves.append(info)

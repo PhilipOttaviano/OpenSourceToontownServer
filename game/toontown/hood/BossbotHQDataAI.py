@@ -14,6 +14,8 @@ from toontown.building import DistributedBBElevatorAI
 from toontown.building import DistributedBoardingPartyAI
 from toontown.building import FADoorCodes
 from toontown.coghq import DistributedCogKartAI
+from toontown.pipeline import DistributedCogHQGoonAI
+
 
 class BossbotHQDataAI(HoodDataAI.HoodDataAI):
     notify = DirectNotifyGlobal.directNotify.newCategory('BossbotHQDataAI')
@@ -39,6 +41,9 @@ class BossbotHQDataAI(HoodDataAI.HoodDataAI):
 
         self.lobbyMgr = LobbyManagerAI.LobbyManagerAI(self.air, DistributedBossbotBossAI.DistributedBossbotBossAI)
         self.lobbyMgr.generateWithRequired(ToontownGlobals.BossbotLobby)
+        self.goon = DistributedCogHQGoonAI.DistributedCogHQGoonAI(self.air)
+        self.goon.generateWithRequired(ToontownGlobals.BossbotHQ)
+        self.goon.generate()
         self.addDistObj(self.lobbyMgr)
         self.lobbyElevator = DistributedBBElevatorAI.DistributedBBElevatorAI(self.air, self.lobbyMgr, ToontownGlobals.BossbotLobby, antiShuffle = 1)
         self.lobbyElevator.generateWithRequired(ToontownGlobals.BossbotLobby)

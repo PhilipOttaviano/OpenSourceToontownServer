@@ -1,0 +1,448 @@
+<CoordinateSystem> { Z-up } 
+<Material> default.025 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.039 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.033 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.044 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> Material.001 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.036 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.028 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.047 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> Material.002 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.007 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.029 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.024 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.022 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.037 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.018 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.021 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.035 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.034 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.003 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.031 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.038 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.030 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.032 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.026 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.043 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.023 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.019 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.040 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.027 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.045 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.042 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.020 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Material> default.041 {
+  <Scalar> baser { 0.800000 }
+  <Scalar> baseg { 0.800000 }
+  <Scalar> baseb { 0.800000 }
+  <Scalar> basea { 1.000000 }
+  <Scalar> roughness { 1.000000 }
+  <Scalar> metallic { 0.000000 }
+  <Scalar> local { 0.000000 }
+  <Scalar> diffr { 1.0 }
+  <Scalar> diffg { 1.0 }
+  <Scalar> diffb { 1.0 }
+}
+
+<Texture> dirt_golf.jpg {
+  "./tex/dirt_golf.jpg"
+  <Scalar> envtype { MODULATE }
+  <Scalar> uv-name { UVMap }
+  <Scalar> minfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> magfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> wrap { REPEAT }
+}
+
+<Texture> WallBricksBig2.jpg {
+  "./tex/WallBricksBig2.jpg"
+  <Scalar> envtype { MODULATE }
+  <Scalar> uv-name { UVMap }
+  <Scalar> minfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> magfilter { LINEAR_MIPMAP_LINEAR }
+  <Scalar> wrap { REPEAT }
+}
+

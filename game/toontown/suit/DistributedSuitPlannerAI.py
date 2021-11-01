@@ -394,7 +394,15 @@ class DistributedSuitPlannerAI(DistributedObjectAI.DistributedObjectAI, SuitPlan
                 suitLevel = self.SuitHoodInfo[self.hoodInfoIdx][self.SUIT_HOOD_INFO_LVL][-1] + 1
         suitLevel, suitType, suitTrack = self.pickLevelTypeAndTrack(suitLevel, suitType, suitTrack)
         if suitName in SuitDNA.customSuitDepts.keys():
-            newSuit.setupCustomDNA(suitLevel, suitName, suitTrack)
+            if suitName == 'sm':
+                newSuit.setupCustomDNA(random.choice([12, 13, 14, 15]), suitName, suitTrack)
+                newSuit.setSkeleRevives(random.choice([0, 1, 2]))
+            elif suitName == 'sec' and suitLevel < 8:
+                newSuit.setupCustomDNA(8, suitName, suitTrack)
+            elif suitName == 'avo' and suitLevel < 7:
+                newSuit.setupCustomDNA(7, suitName, suitTrack)
+            else:
+                newSuit.setupCustomDNA(suitLevel, suitName, suitTrack)
         else:
             newSuit.setupSuitDNA(suitLevel, suitType, suitTrack)
         newSuit.buildingHeight = buildingHeight

@@ -36,6 +36,7 @@ def doSounds(sounds):
      [],
      [],
      [],
+     [],
      []]
     for sound in sounds:
         level = sound['level']

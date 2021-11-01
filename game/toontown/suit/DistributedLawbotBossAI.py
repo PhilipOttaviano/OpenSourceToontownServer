@@ -28,7 +28,7 @@ class DistributedLawbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FSM
     maxToonLevels = 77
 
     def __init__(self, air):
-        DistributedBossCogAI.DistributedBossCogAI.__init__(self, air, 'l')
+        DistributedBossCogAI.DistributedBossCogAI.__init__(self, air, 's')
         FSM.FSM.__init__(self, 'DistributedLawbotBossAI')
         self.lawyers = []
         self.cannons = None
@@ -268,7 +268,7 @@ class DistributedLawbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FSM
         if battleNumber == 1:
             weakenedValue = ((1, 1),
              (2, 2),
-             (2, 2),
+             (2, 2), inv
              (1, 1),
              (1, 1, 1, 1, 1))
             listVersion = list(SuitBuildingGlobals.SuitBuildingInfo)

@@ -121,17 +121,8 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         
         """
         if battleNumber == 1:
-            weakenedValue = ((1, 1),
-             (2, 2),
-             (2, 2),
-             (1, 1),
-             (1, 1, 1, 1, 1))
-            listVersion = list(SuitBuildingGlobals.SuitBuildingInfo)
-            if simbase.config.GetBool('bossbot-boss-cheat', 0):
-                listVersion[14] = weakenedValue
-                SuitBuildingGlobals.SuitBuildingInfo = tuple(listVersion)
-            retval = self.invokeSuitPlanner(14, 0)
-            return retval
+            suits=self.generateWaiterSuits()
+            return suits
         else:
             suits = self.generateDinerSuits()
             return suits
@@ -166,7 +157,7 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         if battleNumber == 1:
             battle = DistributedBattleWaitersAI.DistributedBattleWaitersAI(self.air, self, roundCallback, finishCallback, battleSide)
         else:
-            battle = DistributedBattleDinersAI.DistributedBattleDinersAI(self.air, self, roundCallback, finishCallback, battleSide)
+            battle = DistributedBattleWaitersAI.DistributedBattleWaitersAI(self.air, self, roundCallback, finishCallback, battleSide)
             self.round = 0
             self.allowedCogs = 2
         self.setBattlePos(battle, bossCogPosHpr, battlePosHpr)
@@ -389,13 +380,21 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
 
     def generateDinerSuits(self):
         diners = []
-        for i in xrange(len(self.notDeadList)):
+        for i in xrange(70):
             if simbase.config.GetBool('bossbot-boss-cheat', 0):
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 info = self.notDeadList[i]
-                suitType = 8
-                suitLevel = 12
+                suitType = random.choice([4, 5, 6, 7, 8])
+                if suitType == 4 or 5:
+                    suitLevel = random.choice([5, 6, 7, 8])
+                elif suitType == 6 or 7:
+                    suitLevel=random.choice([8, 9, 10, 11, 12])
+                elif suitType == 8:
+                    suitLevel=random.choice([12, 13, 14, 15, 16])
+                else:
+                    suitLevel = suitType
+
                 suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
             diners.append((suit, 100))
 
@@ -405,8 +404,27 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
                 suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
             else:
                 suitType = 8
-                suitLevel = 12
+                suitLevel = 15
                 suit = self.__genSuitObject(self.zoneId, suitType, 'c', suitLevel, 1)
+            active.append(suit)
+
+        return {'activeSuits': active,
+         'reserveSuits': diners}
+
+    def generateWaiterSuits(self):
+        diners = []
+        for i in xrange(70):
+            suit = self.__genSuitObjectCustom(self.zoneId, 8, 'c', random.choice([12, 13, 14, 15]), 'sec', 0)
+            diners.append((suit, 100))
+
+        active = []
+        for i in xrange(2):
+            if simbase.config.GetBool('bossbot-boss-cheat', 0):
+                suit = self.__genSuitObject(self.zoneId, 2, 'c', 2, 0)
+            else:
+                suitType = 8
+                suitLevel = 20
+                suit = self.__genSuitObjectCustom(self.zoneId, suitType, 'c', suitLevel, 'sec', 0)
             active.append(suit)
 
         return {'activeSuits': active,
@@ -425,6 +443,24 @@ class DistributedBossbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
     def __setupSuitInfo(self, suit, bldgTrack, suitLevel, suitType):
         dna = SuitDNA.SuitDNA()
         dna.newSuitRandom(suitType, bldgTrack)
+        suit.dna = dna
+        self.notify.debug('Creating suit type ' + suit.dna.name + ' of level ' + str(suitLevel) + ' from type ' + str(suitType) + ' and track ' + str(bldgTrack))
+        suit.setLevel(suitLevel)
+        return False
+
+    def __genSuitObjectCustom(self, suitZone, suitType, bldgTrack, suitLevel, suitName, revives = 0):
+        newSuit = DistributedSuitAI.DistributedSuitAI(simbase.air, None)
+        skel = self.__setupSuitInfoCustom(newSuit, bldgTrack, suitLevel, suitType, suitName)
+        if skel:
+            newSuit.setSkelecog(1)
+        newSuit.setSkeleRevives(revives)
+        newSuit.generateWithRequired(suitZone)
+        newSuit.node().setName('suit-%s' % newSuit.doId)
+        return newSuit
+
+    def __setupSuitInfoCustom(self, suit, bldgTrack, suitLevel, suitType, suitName):
+        dna = SuitDNA.SuitDNA()
+        dna.newSuit(suitName)
         suit.dna = dna
         self.notify.debug('Creating suit type ' + suit.dna.name + ' of level ' + str(suitLevel) + ' from type ' + str(suitType) + ' and track ' + str(bldgTrack))
         suit.setLevel(suitLevel)

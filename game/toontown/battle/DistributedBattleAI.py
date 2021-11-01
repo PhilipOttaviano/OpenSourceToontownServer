@@ -7,9 +7,13 @@ import DistributedBattleBaseAI
 from direct.task import Task
 from direct.directnotify import DirectNotifyGlobal
 import random
+from toontown.suit import DistributedSuitAI
+from toontown.suit import SuitDNA
 
 class DistributedBattleAI(DistributedBattleBaseAI.DistributedBattleBaseAI):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedBattleAI')
+
+    doId = 1
 
     def __init__(self, air, battleMgr, pos, suit, toonId, zoneId, finishCallback = None, maxSuits = 8, tutorialFlag = 0, levelFlag = 0, interactivePropTrackBonus = -1):
         DistributedBattleBaseAI.DistributedBattleBaseAI.__init__(self, air, zoneId, finishCallback, maxSuits=maxSuits, tutorialFlag=tutorialFlag, interactivePropTrackBonus=interactivePropTrackBonus)
@@ -18,6 +22,16 @@ class DistributedBattleAI(DistributedBattleBaseAI.DistributedBattleBaseAI):
         self.initialSuitPos = suit.getConfrontPosHpr()[0]
         self.initialToonPos = suit.getConfrontPosHpr()[0]
         self.addSuit(suit)
+        '''
+        for i in xrange(5):
+            self.suit2 = DistributedSuitAI.DistributedSuitAI(self.air, None)
+            level = 7
+            self.suit2.dna = SuitDNA.SuitDNA()
+            self.suit2.dna.newSuitRandom(level=level, dept='s')
+            self.suit2.setLevel(15)
+            self.suit2.generateWithRequired(self.zoneId)
+            self.suitRequestJoin(self.suit2)
+        '''
         self.avId = toonId
         if levelFlag == 0:
             self.addToon(toonId)

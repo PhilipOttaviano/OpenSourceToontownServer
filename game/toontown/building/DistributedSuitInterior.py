@@ -252,7 +252,7 @@ class DistributedSuitInterior(DistributedObject.DistributedObject):
         if self.floorModel:
             self.floorModel.removeNode()
         if self.currentFloor == 0:
-            self.floorModel = loader.loadModel('phase_7/models/modules/suit_interior')
+            self.floorModel = loader.loadModel('phase_7/models/modules/CogBuildingFloor2.egg')
             SuitHs = self.BottomFloor_SuitHs
             SuitPositions = self.BottomFloor_SuitPositions
         elif self.currentFloor == self.numFloors - 1:
@@ -260,7 +260,7 @@ class DistributedSuitInterior(DistributedObject.DistributedObject):
             SuitHs = self.BossOffice_SuitHs
             SuitPositions = self.BossOffice_SuitPositions
         else:
-            self.floorModel = loader.loadModel('phase_7/models/modules/cubicle_room')
+            self.floorModel = loader.loadModel('phase_7/models/modules/CogBuildingFloor2.egg')
             SuitHs = self.Cubicle_SuitHs
             SuitPositions = self.Cubicle_SuitPositions
         self.floorModel.reparentTo(render)

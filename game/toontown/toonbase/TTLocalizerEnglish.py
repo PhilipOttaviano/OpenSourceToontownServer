@@ -114,6 +114,7 @@ GlobalStreetNames = {20000: ('to', 'on', 'Tutorial Terrace'),
  11000: ('to the', 'in the', 'Sellbot HQ Courtyard'),
  11100: ('to the', 'in the', 'Sellbot HQ Lobby'),
  11200: ('to the', 'in the', 'Sellbot Factory'),
+ 11300: ('to the', 'in the', 'West Wing'),
  11500: ('to the', 'in the', 'Sellbot Factory'),
  12000: ('to', 'in', 'Cashbot Train Yard'),
  12100: ('to the', 'in the', 'Cashbot HQ Lobby'),
@@ -1922,6 +1923,7 @@ LawbotSkelP = 'Lawbot Skelecogs'
 CashbotSkelP = 'Cashbot Skelecogs'
 SellbotSkelP = 'Sellbot Skelecogs'
 SkeleRevivePostFix = ' v2.0'
+SkeleRevivePostFix2 = ' v3.0'
 AvatarDetailPanelOK = lOK
 AvatarDetailPanelCancel = lCancel
 AvatarDetailPanelClose = lClose

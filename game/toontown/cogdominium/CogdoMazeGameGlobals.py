@@ -81,7 +81,7 @@ PickupsUntilDoorOpens = int(NumPickups * 0.6)
 SuitCollisionName = 'CogdoMazeSuit_Collision'
 SuitWalkSameDirectionProb = 1
 SuitWalkTurnAroundProb = 100
-SuitTypes = PythonUtil.Enum(('Boss', 'FastMinion', 'SlowMinion'))
+SuitTypes = PythonUtil.Enum(('Boss', 'FastMinion', 'SlowMinion', 'Hollywood'))
 SuitData = {}
 SuitData[SuitTypes.Boss] = {'dnaName': 'ms',
  'cellWalkPeriod': 192,
@@ -101,13 +101,19 @@ SuitData[SuitTypes.SlowMinion] = {'dnaName': 'cc',
  'scale': 1.33,
  'hp': 1,
  'memos': 2}
-NumSuits = (4, 5, 5)
+SuitData[SuitTypes.Hollywood] = {'dnaName': 'mh',
+ 'cellWalkPeriod': 192,
+ 'toonDamage': 1.5,
+ 'scale': 1.0,
+ 'hp': 3,
+ 'memos': 8}
+NumSuits = (4, 5, 5, 5)
 BossSpinTime = 1.0
 BossSpinCount = 2
 BlinkFrequency = 1.0
 BlinkSpeed = 0.5
 BlinkColor = VBase4(1.0, 0.4, 0.4, 1.0)
-SuitsModifier = (0, 6, 9)
+SuitsModifier = (0, 0, 0, 6)
 DamageModifier = 9.0
 DropShakeEnabled = True
 BossShakeEnabled = True

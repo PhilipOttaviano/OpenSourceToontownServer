@@ -1,3 +1,5 @@
+import random
+
 import TTLocalizer
 from otp.otpbase.OTPGlobals import *
 from direct.showbase.PythonUtil import Enum, invertDict
@@ -1546,32 +1548,32 @@ BossbotBossMaxDamage = 500
 BossbotMaxSpeedDamage = 90
 BossbotSpeedRecoverRate = 20
 BossbotBossDifficultySettings = [(8,
-  4,
-  11,
+  5,
+  random.choice([8, 9]),
   3,
   30,
   25),
  (9,
   5,
-  12,
+  random.choice([9, 10]),
   6,
   28,
   26),
  (10,
   6,
-  11,
+  random.choice([8, 9, 10]),
   7,
   26,
   27),
  (8,
-  8,
-  12,
+  6,
+  random.choice([10, 11]),
   8,
   24,
   28),
  (13,
-  5,
-  12,
+  7,
+  random.choice([11, 12]),
   9,
   22,
   29)]

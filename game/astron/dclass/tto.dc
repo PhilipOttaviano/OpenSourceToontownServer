@@ -66,6 +66,7 @@ from toontown.coghq import DistributedCashbotBossSafe/AI
 from toontown.coghq import DistributedCashbotBossCrane/AI
 from toontown.suit import DistributedCashbotBossGoon/AI
 from toontown.battle import DistributedBattleBase/AI
+from toontown.pipeline import DistributedBattleCommunicatorBase/AI
 from toontown.battle import DistributedBattle/AI
 from toontown.battle import DistributedBattleBldg/AI
 from toontown.tutorial import DistributedBattleTutorial/AI
@@ -205,6 +206,7 @@ from toontown.coghq import CrusherCell/AI
 from toontown.coghq import DistributedCrate/AI
 from toontown.coghq import DistributedSinkingPlatform/AI
 from toontown.suit import DistributedGoon/AI
+from toontown.pipeline import DistributedCogHQGoon/AI
 from toontown.suit import DistributedGridGoon/AI
 from toontown.coghq import BattleBlocker/AI
 from toontown.ai import DistributedBlackCatMgr/AI
@@ -1463,6 +1465,8 @@ dclass DistributedCashbotBossSafe : DistributedCashbotBossObject {
   requestInitial() airecv clsend;
 };
 
+
+
 dclass DistributedCashbotBossGoon : DistributedCashbotBossObject {
   requestBattle(int16/10) airecv clsend;
   requestStunned(int16/10) airecv clsend;
@@ -1474,6 +1478,9 @@ dclass DistributedCashbotBossGoon : DistributedCashbotBossObject {
   setupGoon : setVelocity, setHFov, setAttackRadius, setStrength, setGoonScale;
   setTarget(int16/10, int16/10, uint16%360/100, int16) broadcast ram;
   destroyGoon() broadcast clsend airecv;
+};
+
+dclass DistributedBattleCommunicatorBase : DistributedObject {
 };
 
 dclass DistributedBattleBase : DistributedObject {
@@ -2278,7 +2285,7 @@ dclass DistCogdoLevelGame : DistCogdoGame, DistributedLevel {
 dclass DistCogdoMazeGame : DistCogdoGame {
   requestAction(uint8, uint32) airecv clsend;
   doAction(uint8, uint32, int16) broadcast;
-  setNumSuits(uint8 [3]) required broadcast;
+  setNumSuits(uint8 [4]) required broadcast;
   requestUseGag(int16/10, int16/10, int16/10, int16) clsend airecv;
   toonUsedGag(uint32, int16/10, int16/10, int16/10, int16) broadcast;
   requestSuitHitByGag(uint8, uint8) clsend airecv;
@@ -2932,6 +2939,17 @@ dclass DistributedGoon : DistributedCrushableEntity {
   requestResync() airecv clsend;
   setParameterize(int16/10, int16/10, int16/10, uint32) airecv clsend;
   setMovie(uint8, uint32, int32/10, int16) broadcast ram;
+};
+
+dclass DistributedCogHQGoon : DistributedGoon {
+  requestBattle(int16/10) airecv clsend;
+  requestStunned(int16/10) airecv clsend;
+  setVelocity(uint8/10) broadcast ram;
+  setHFov(uint8) broadcast ram;
+  setAttackRadius(uint8) broadcast ram;
+  setStrength(uint8) broadcast ram;
+  setGoonScale(uint8/50) broadcast ram;
+  setupGoon : setVelocity, setHFov, setAttackRadius, setStrength, setGoonScale;
 };
 
 dclass DistributedGridGoon : DistributedGoon {

@@ -70,6 +70,7 @@ hh = (('pen-squirt', 'fountain-pen', 7),
  ('magic1', 'magic1', 5),
  ('roll-o-dex', 'roll-o-dex', 5))
 cr = (('pickpocket', 'pickpocket', 5), ('throw-paper', 'throw-paper', 3.5), ('glower', 'glower', 5))
+avo = (('pickpocket', 'pickpocket', 5), ('throw-paper', 'throw-paper', 3.5), ('glower', 'glower', 5))
 tbc = (('cigar-smoke', 'cigar-smoke', 8),
  ('glower', 'glower', 5),
  ('song-and-dance', 'song-and-dance', 8),
@@ -100,6 +101,10 @@ m = (('speak', 'speak', 5),
  ('magic2', 'magic2', 5),
  ('magic1', 'magic1', 5),
  ('golf-club-swing', 'golf-club-swing', 5))
+sm = (('speak', 'speak', 5),
+ ('magic2', 'magic2', 5),
+ ('magic1', 'magic1', 5),
+ ('golf-club-swing', 'golf-club-swing', 5))
 mh = (('magic1', 'magic1', 5),
  ('smile', 'smile', 5),
  ('golf-club-swing', 'golf-club-swing', 5),
@@ -114,6 +119,7 @@ bc = (('phone', 'phone', 5), ('hold-pencil', 'hold-pencil', 5))
 nc = (('phone', 'phone', 5), ('throw-object', 'throw-object', 5))
 mb = (('magic1', 'magic1', 5), ('throw-paper', 'throw-paper', 3.5))
 ls = (('throw-paper', 'throw-paper', 5), ('throw-object', 'throw-object', 5), ('hold-pencil', 'hold-pencil', 5))
+ck = (('throw-paper', 'throw-paper', 5), ('throw-object', 'throw-object', 5), ('hold-pencil', 'hold-pencil', 5))
 qm = (('throw-paper', 'throw-paper', 5), ('throw-object', 'throw-object', 5), ('hold-pencil', 'hold-pencil', 5))
 rb = (('glower', 'glower', 5), ('magic1', 'magic1', 5), ('golf-club-swing', 'golf-club-swing', 5))
 bf = (('pickpocket', 'pickpocket', 5),
@@ -146,6 +152,12 @@ le = (('speak', 'speak', 5),
  ('glower', 'glower', 5),
  ('throw-paper', 'throw-paper', 5))
 bw = (('finger-wag', 'fingerwag', 5),
+ ('cigar-smoke', 'cigar-smoke', 8),
+ ('gavel', 'gavel', 8),
+ ('magic1', 'magic1', 5),
+ ('throw-object', 'throw-object', 5),
+ ('throw-paper', 'throw-paper', 5))
+sec = (('finger-wag', 'fingerwag', 5),
  ('cigar-smoke', 'cigar-smoke', 8),
  ('gavel', 'gavel', 8),
  ('magic1', 'magic1', 5),
@@ -465,6 +477,13 @@ class Suit(Avatar.Avatar):
             self.headTexture = 'bottom-feeder.jpg'
             self.generateHead('tightwad')
             self.setHeight(4.81)
+        elif dna.name == 'avo':
+            self.scale = 5.3 / cSize
+            self.handColor = SuitDNA.legalPolyColor
+            self.generateBody()
+            self.makeSkeleton()
+            self.generateHead('tt_ene_chr_hidden')
+            self.setHeight(6.53)
         elif dna.name == 'b':
             self.scale = 4.375 / bSize
             self.handColor = VBase4(0.95, 0.95, 1.0, 1.0)
@@ -510,6 +529,13 @@ class Suit(Avatar.Avatar):
             self.generateBody()
             self.generateHead('bigwig')
             self.setHeight(8.69)
+        elif dna.name == 'sec':
+            self.scale = 7.0 / aSize
+            self.handColor = SuitDNA.legalPolyColor
+            self.generateBody()
+            self.makeSkeletonVirtual()
+            self.generateHead('tt_ene_chr_hidden')
+            self.setHeight(8.69)
         elif dna.name == 'sc':
             self.scale = 3.6 / cSize
             self.handColor = SuitDNA.moneyPolyColor
@@ -552,6 +578,13 @@ class Suit(Avatar.Avatar):
             self.generateBody()
             self.generateHead('loanshark')
             self.setHeight(8.58)
+        elif dna.name == 'ck':
+            self.scale = 7.8 / bSize
+            self.handColor = SuitDNA.legalPolyColor
+            self.generateBody()
+            self.makeSkeleton()
+            self.generateHead('tt_ene_chr_hidden')
+            self.setHeight(9.30)
         elif dna.name == 'qm':
             self.scale = 6.5 / bSize
             self.handColor = VBase4(0.5, 0.85, 0.75, 1.0)
@@ -616,6 +649,13 @@ class Suit(Avatar.Avatar):
             self.generateBody()
             self.generateHead('yesman')
             self.setHeight(8.95)
+        elif dna.name == 'sm':
+            self.scale = 6.7 / aSize
+            self.handColor = SuitDNA.salesPolyColor
+            self.generateBody()
+            self.generateHead('tt_ene_chr_hidden')
+            self.makeSkeleton()
+            self.setHeight(8.80)
         self.setName(SuitBattleGlobals.SuitAttributes[dna.name]['name'])
         self.getGeomNode().setScale(self.scale)
         self.generateHealthBar()
@@ -777,6 +817,11 @@ class Suit(Avatar.Avatar):
         if headType == 'tt_ene_chr_quarter_master':
             qMaster = loader.loadModel('phase_14/models/char/tt_ene_chr_quarter_master.bam')
             qMaster.reparentTo(self.find('**/joint_head'))
+            self.headParts.append(qMaster)
+        elif headType == 'tt_ene_chr_hidden':
+            qMaster = loader.loadModel('phase_14/models/char/tt_ene_chr_quarter_master.bam')
+            qMaster.reparentTo(self.find('**/joint_head'))
+            qMaster.hide()
             self.headParts.append(qMaster)
         else:
             for i in xrange(0, headReferences.getNumPaths()):
@@ -969,9 +1014,6 @@ class Suit(Avatar.Avatar):
         model = 'phase_5/models/char/cog' + string.upper(self.style.body) + '_robot-zero'
         anims = self.generateAnimDict()
         anim = self.getCurrentAnim()
-        dropShadow = self.dropShadow
-        if not dropShadow.isEmpty():
-            dropShadow.reparentTo(hidden)
         self.removePart('modelRoot')
         self.loadModel(model)
         self.loadAnims(anims)
@@ -985,21 +1027,57 @@ class Suit(Avatar.Avatar):
             bb = parts.getPath(partNum)
             bb.setTwoSided(1)
 
-        self.setName(TTLocalizer.Skeleton)
+        #self.setName(TTLocalizer.Skeleton)
         nameInfo = TTLocalizer.SuitBaseNameWithLevel % {'name': self._name,
          'dept': self.getStyleDept(),
          'level': self.getActualLevel()}
-        self.setDisplayName(nameInfo)
+        #self.setDisplayName(nameInfo)
         self.leftHand = self.find('**/joint_Lhold')
         self.rightHand = self.find('**/joint_Rhold')
         self.shadowJoint = self.find('**/joint_shadow')
         self.nametagNull = self.find('**/joint_nameTag')
-        if not dropShadow.isEmpty():
-            dropShadow.setScale(0.75)
-            if not self.shadowJoint.isEmpty():
-                dropShadow.reparentTo(self.shadowJoint)
         self.loop(anim)
         self.isSkeleton = 1
+        self.setBlend(frameBlend=base.settings.getBool('game', 'interpolate-animations', False))
+
+    def makeSkeletonVirtual(self):
+        model = 'phase_5/models/char/cog' + string.upper(self.style.body) + '_robot-zero'
+        anims = self.generateAnimDict()
+        anim = self.getCurrentAnim()
+        self.removePart('modelRoot')
+        self.loadModel(model)
+        self.loadAnims(anims)
+        self.getGeomNode().setScale(self.scale * 1.0173)
+        self.generateHealthBar()
+        self.generateCorporateMedallion()
+        self.generateCorporateTie()
+        self.setHeight(self.height)
+        parts = self.findAllMatches('**/pPlane*')
+        for partNum in xrange(0, parts.getNumPaths()):
+            bb = parts.getPath(partNum)
+            bb.setTwoSided(1)
+
+        #self.setName(TTLocalizer.Skeleton)
+        nameInfo = TTLocalizer.SuitBaseNameWithLevel % {'name': self._name,
+         'dept': self.getStyleDept(),
+         'level': self.getActualLevel()}
+        #self.setDisplayName(nameInfo)
+        self.leftHand = self.find('**/joint_Lhold')
+        self.rightHand = self.find('**/joint_Rhold')
+        self.shadowJoint = self.find('**/joint_shadow')
+        self.nametagNull = self.find('**/joint_nameTag')
+        self.loop(anim)
+        self.isSkeleton = 1
+        actorNode=self.find('**/__Actor_modelRoot')
+        actorCollection=actorNode.findAllMatches('*')
+        parts=()
+        for thingIndex in xrange(0, actorCollection.getNumPaths()):
+            thing=actorCollection[thingIndex]
+            if thing.getName() not in ('joint_attachMeter', 'joint_nameTag', 'def_nameTag'):
+                thing.setColorScale(1.0, 0.0, 0.0, 1.0)
+                thing.setAttrib(ColorBlendAttrib.make(ColorBlendAttrib.MAdd))
+                thing.setDepthWrite(False)
+                thing.setBin('fixed', 1)
         self.setBlend(frameBlend=base.settings.getBool('game', 'interpolate-animations', False))
 
     def getHeadParts(self):

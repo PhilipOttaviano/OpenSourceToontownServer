@@ -4,6 +4,7 @@ import DistributedBossCogAI
 from direct.directnotify import DirectNotifyGlobal
 from otp.avatar import DistributedAvatarAI
 import DistributedSuitAI
+import SuitDNA, random
 from toontown.battle import BattleExperienceAI
 from direct.fsm import FSM
 from toontown.toonbase import ToontownGlobals
@@ -12,7 +13,7 @@ from toontown.toonbase import TTLocalizer
 from toontown.battle import BattleBase
 from toontown.toon import NPCToons
 from toontown.suit import SellbotBossGlobals
-import SuitDNA, random
+
 
 class DistributedSellbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FSM):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedSellbotBossAI')
@@ -225,7 +226,7 @@ class DistributedSellbotBossAI(DistributedBossCogAI.DistributedBossCogAI, FSM.FS
         return str(self.cagedToonNpcId)
 
     def makeBattleOneBattles(self):
-        self.postBattleState = 'RollToBattleTwo'
+        self.postBattleState = 'PrepareBattleThree'
         self.initializeBattles(1, ToontownGlobals.SellbotBossBattleOnePosHpr)
 
     def generateSuits(self, battleNumber):

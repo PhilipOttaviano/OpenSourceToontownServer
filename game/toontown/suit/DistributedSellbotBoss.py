@@ -349,11 +349,11 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
                 Func(camera.setPosHpr, -25, -99, 10, -14, 10, 0),
                 IndirectInterval(dooberTrack, 14),
                 IndirectInterval(toonTrack, 30))),
-            (18, Func(self.setChatAbsolute, welcomeToons, CFSpeech)),
-            (22, Func(self.setChatAbsolute, promoteToons, CFSpeech)),
+            (18, Func(self.setChatAbsolute, "Welcome Sellbots, I have upgraded our marketing system to be more advanced.", CFSpeech)),
+            (22, Func(self.setChatAbsolute, "You will be promoted at the Executive Off-", CFSpeech)),
             (22.2, Sequence(
                 Func(self.cagedToon.nametag3d.setScale, 2),
-                Func(self.cagedToon.setChatAbsolute, interruptBoss, CFSpeech),
+                Func(self.cagedToon.setChatAbsolute, "Watch out!", CFSpeech),
                 ActorInterval(self.cagedToon, 'wave'),
                 Func(self.cagedToon.loop, 'neutral'))),
             (25, Sequence(
@@ -362,13 +362,13 @@ class DistributedSellbotBoss(DistributedBossCog.DistributedBossCog, FSM.FSM):
                 Func(camera.setPosHpr, -12, -15, 27, -151, -15, 0),
                 ActorInterval(self, 'Ff_lookRt'))),
             (27, Sequence(
-                Func(self.cagedToon.setChatAbsolute, rescueQuery, CFSpeech),
+                Func(self.cagedToon.setChatAbsolute, "Oh thank you toons for coming to save me! The Sellbots have gotten an upgrade! ", CFSpeech),
                 Func(camera.setPosHpr, -12, 48, 94, -26, 20, 0),
                 ActorInterval(self.cagedToon, 'wave'),
                 Func(self.cagedToon.loop, 'neutral'))),
             (31, Sequence(
                 Func(camera.setPosHpr, -20, -35, 10, -88, 25, 0),
-                Func(self.setChatAbsolute, discoverToons, CFSpeech),
+                Func(self.setChatAbsolute, "Toons! I new you looked fishy.", CFSpeech),
                 Func(self.cagedToon.nametag3d.setScale, 1),
                 Func(self.cagedToon.clearChat),
                 ActorInterval(self, 'turn2Fb'))),
